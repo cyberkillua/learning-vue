@@ -1,13 +1,10 @@
 <template>
   <div class="boxed">
-    <div
-      class="box"
-      @click="attachedRed = !attachedRed"
-      :class="{ blue: attachedRed }"
-    ></div>
-    <div class="box" :class="{ yellow: attachedRed }"></div>
-    <div class="box" :class="color"></div>
-    <input type="text" v-model="color" />
+    <div class="box" v-if="show"></div>
+    <p v-else> i was here </p>
+    <div class="box"></div>
+    <div class="box"></div>
+    <button @click="show = !show"> fuck off</button>
   </div>
 </template>
 
@@ -16,8 +13,7 @@ export default {
   name: "HelloWorld",
   data() {
     return {
-      color: "green",
-      attachedRed: false,
+      show: true,
     };
   },
 };
